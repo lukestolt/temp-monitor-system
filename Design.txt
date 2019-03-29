@@ -1,0 +1,18 @@
+Server:
+    - store data in JSON? or Database?
+    POST:
+        - temperature data
+    GET:
+        - temperature data
+        - past data
+        - statisicall data
+            - lowest, highest, average
+
+Client:
+    - shows the current temperature
+    - show low and high in the past 24 hours
+    - show historical data
+        - export data as csv between certain dates
+        - show data graphically
+        - show statistics
+    
