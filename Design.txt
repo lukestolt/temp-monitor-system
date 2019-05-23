@@ -1,5 +1,5 @@
 Server:
-    - store data in JSON? or Database?
+    - store data in  Database?
     POST:
         - temperature data
     GET:
