@@ -1,18 +1,17 @@
 Server:
-    - store data in  Database?
-    POST:
-        - temperature data
-    GET:
-        - temperature data
-        - past data
-        - statisicall data
-            - lowest, highest, average
+    - framework: python django 
+    - recieves temperature updates from the sensors
+    - sends data from database 
+
 
 Client:
+    - framework: angular
     - shows the current temperature
-    - show low and high in the past 24 hours
-    - show historical data
-        - export data as csv between certain dates
-        - show data graphically
-        - show statistics
+    - shows historical data
+      -  low, high, average in a specific range
+        - display the data graphically
+        - export as a csv
+
+Database:
+    - framework: postgre
     
