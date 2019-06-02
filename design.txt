@@ -10,6 +10,7 @@ Client:
     - shows historical data
       -  low, high, average in a specific range
         - display the data graphically
+		- webgl?
         - export as a csv
 
 Database:
