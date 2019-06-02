@@ -10,14 +10,14 @@
         "projectUniqueName": "C:\\Git\\RemoteTemperature\\app\\server\\temperature-server\\temperature-server.csproj",
         "projectName": "temperature-server",
         "projectPath": "C:\\Git\\RemoteTemperature\\app\\server\\temperature-server\\temperature-server.csproj",
-        "packagesPath": "C:\\Users\\lukes\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\lss\\.nuget\\packages\\",
         "outputPath": "C:\\Git\\RemoteTemperature\\app\\server\\temperature-server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\lukes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\lss\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

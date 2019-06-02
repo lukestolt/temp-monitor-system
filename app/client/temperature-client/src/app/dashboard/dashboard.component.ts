@@ -17,7 +17,9 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     // starts the clock and gets current date
+    this.curTime = '';
     this.startTime();
+    
 
     // TODO: populate the temp and humidity from the server
   }
@@ -31,15 +33,14 @@ export class DashboardComponent implements OnInit {
     const today = new Date();
     const hours = (today.getHours() % 12) + '';
 
-
     const minutesNum = today.getMinutes();
     let minutes = minutesNum + '';
     if (minutesNum <= 9) {
       minutes = '0' + minutesNum;
     }
-
+    
     this.curTime = hours + ':' + minutes;
     this.curDate = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
-    setTimeout(this.startTime, 2000);
+    setInterval(() => this.startTime(), 5000);
   }
 }

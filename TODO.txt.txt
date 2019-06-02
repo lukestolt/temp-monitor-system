@@ -1,0 +1,11 @@
+1. Python sensor communication
+   - send data to the server from the sensors
+   - get the sensors to read the data
+2. Create API's for POST the sensors' data
+   - what class holds the golden copy for the current data
+3. Setup the database
+   - after reading in the sensor's data write the data to the database
+   - setup dynamic queries for variable time periods
+4. User login
+5. Angular Historical Data page
+   - routing, gui
