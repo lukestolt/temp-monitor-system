@@ -2,3 +2,13 @@
 *{
     font-family: monospace;
 }
+
+.title
+{
+    text-align: center;
+    margin:10px;
+} 
+.navTitle
+{
+    color: white !important;
+}

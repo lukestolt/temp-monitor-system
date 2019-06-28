@@ -1,10 +1,16 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <h1 class= "title animated zoomIn">IntelliCENTER Lab Climate Monitor</h1>
-  <app-dashboard></app-dashboard>
-  <div class="button-container">
-    <button type="button">Historical Data</button>
-  </div>
-  
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand navTitle">IC5K Lab Climate Monitor</a>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" (click)="navToDashboard()">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" (click)="navToHist()">Historical Data</a>
+            </li>
+        </ul>
+    </div>
+</nav>
 </div>
 <router-outlet></router-outlet>
