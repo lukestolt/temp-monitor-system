@@ -13,13 +13,13 @@ export class AppComponent {
     //
   }
 
-  showHist(): void {
+  histNavigate(): void {
       console.log('navigating to the hist view');
       this.router.navigateByUrl('/historical');
   }
 
-  showDash(): void {
-    console.log('navigating to the hist view');
+  dashNavigate(): void {
+    console.log('navigating to the dash view');
     this.router.navigateByUrl('/dashboard');
   }
 

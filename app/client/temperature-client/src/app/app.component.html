@@ -1,16 +1,18 @@
 <div>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand navTitle">IC5K Lab Climate Monitor</a>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" (click)="navToDashboard()">Dashboard</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" (click)="navToHist()">Historical Data</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand navTitle">IC5K Lab Climate Monitor</a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="navBarLinks" routerLink="/dashboard" routerLinkActive="active-link">Dashboard</a>
+                    <!-- <a (click)="dashNavigate()">Dashboard</a> -->
+                </li>
+                <li class="nav-item">
+                    <a class="navBarLinks" routerLink="/historical" routerLinkActive="active-link">Historical Data</a>
+                    <!-- <a (click)="histNavigate()">Historical Data</a> -->
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
 <router-outlet></router-outlet>

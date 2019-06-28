@@ -1,5 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { startTimeRange } from '@angular/core/src/profile/wtf_impl';
+import { CurrentClimateService } from '../services/current-climate.service';
+
+
+export interface Dashboard {
+  temperature: number;
+  humidity: number;
+  time: string;
+  date: string;
+}
 
 @Component({
   selector: 'app-dashboard',
@@ -13,18 +22,18 @@ export class DashboardComponent implements OnInit {
   curTemp: number;
   curHumidity: number;
 
-  constructor() { }
+  constructor(private climateService: CurrentClimateService) {
+    this.climateService.getCurrentStatus().subscribe(result => {
+      this.curTemp = result.temperature;
+      this.curHumidity = result.humidity;
+    });
+  }
 
   ngOnInit() {
     // starts the clock and gets current date
     this.curTime = '';
     this.startTime();
-    
-
-    // TODO: populate the temp and humidity from the server
   }
-
-  
 
   /**
    * updates the time
@@ -38,7 +47,7 @@ export class DashboardComponent implements OnInit {
     if (minutesNum <= 9) {
       minutes = '0' + minutesNum;
     }
-    
+
     this.curTime = hours + ':' + minutes;
     this.curDate = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
     setInterval(() => this.startTime(), 5000);

@@ -1,19 +1,21 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
+import { HttpClient } from '@angular/common/http';
+import { Dashboard } from '../dashboard/dashboard.component';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class CurrentClimateService {
-
-
-  //TODO: create api for historical data 
-
+  port = '5001';
+  base = 'localhost';
+  url = this.base + ':' + this.port ;
 
   constructor(private http: HttpClient) { }
 
-  getCurrentStatus(){
-
+  getCurrentStatus(): Observable<Dashboard> {
+    return this.http.get<Dashboard>(this.url + '/dashboard/getcurrentstatus');
   }
 
 }
