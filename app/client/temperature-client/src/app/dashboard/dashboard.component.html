@@ -1,11 +1,15 @@
 
 <div class="dashboard-wrapper">
   <div class="date-container">
-      <h3>{{curTime}}</h3>
-      <h3>{{curDate}}</h3>
+    <iframe src="http://free.timeanddate.com/clock/i6tvtfqb/n158/fn8/fs30/bas0/tt0/tw1/tm2" frameborder="0" width="543" height="36"></iframe>
   </div>
   
-  <h3>{{curTemp}}&#176;</h3>
+  <h3>{{curTemp}} &#176;</h3>
   <br>
-  <h3>{{curHumidity}}g/m<sup>3</sup></h3>
+  <h3>{{curHumidity}} g/m<sup>3</sup></h3>
+
+  <br>
+  <button (click)='updateData()'>Update Data</button>
+  <br>
+  <button (click)='updateView()'>Update View</button>
 </div>

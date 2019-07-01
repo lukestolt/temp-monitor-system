@@ -14,5 +14,10 @@ namespace Models
             this.date = date;
             this.time = time;
         }
+        
+        public DashboardModel()
+        {
+
+        }
     }
 }

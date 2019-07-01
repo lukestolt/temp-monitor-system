@@ -1,7 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using Models;
+using Storage;
 using System;
 using System.Collections.Generic;
+using Models.ResponseModels;
 
 namespace Controllers
 {
@@ -15,11 +17,22 @@ namespace Controllers
         [HttpGet]
         public ActionResult GetCurrentStatus() 
         {
-            DashboardModel dm = new DashboardModel(5, 6, "June 28, 2019", "9:54");
-            
-            var obj = new { name = "hello"};
-            // return new JsonResult(obj);
+            // TemperatureData.Instance().currentDashModel = new DashboardModel(5, 6, "June 28, 2019", "9:54");
+            DashboardModel dm = TemperatureData.Instance().currentDashModel;
             return Json(dm);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCurrentStatus([FromBody] DashboardModel dashModel) 
+        {
+            Console.WriteLine("UpdateCurretnStatus");
+            if(dashModel != null)
+            {
+                TemperatureData.UpdateDashboardModel(dashModel);
+                Console.WriteLine(TemperatureData.Instance().currentDashModel.date);
+                return Json(new ResponseModel(ResponseModel.Responses.Success));
+            }
+            return Json(new ResponseModel(ResponseModel.Responses.Error));
         }
     }
 }

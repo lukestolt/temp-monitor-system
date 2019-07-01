@@ -18,7 +18,6 @@ namespace TemperatureServer
         {
             Configuration = configuration;
         }
-    readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -30,16 +29,7 @@ namespace TemperatureServer
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
-            services.AddCors(options =>
-            {
-                options.AddPolicy(MyAllowSpecificOrigins, builder =>
-                {
-                    builder.AllowAnyHeader()
-                    .AllowAnyMethod()
-                    .AllowCredentials();
-                });
-            });
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -55,11 +45,13 @@ namespace TemperatureServer
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
-            // app.UseCors(builder =>
-            // {
-            //     builder.WithOrigins("http://localhost").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
-            // });
-            app.UseCors(MyAllowSpecificOrigins);
+
+            app.UseCors(builder =>
+            {
+                builder.WithOrigins("http://localhost").AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
+            });
+
+            // app.UseCors(MyAllowSpecificOrigins);
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();

@@ -52,4 +52,22 @@ export class DashboardComponent implements OnInit {
     this.curDate = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
     setInterval(() => this.startTime(), 5000);
   }
+
+  // FIXME: for testing purpose only
+  updateData(): void {
+    console.log('updating the data');
+    const data: Dashboard = {temperature: 73, humidity: 89, time: '9:37', date: '7/1/2019'};
+    this.climateService.updateCurrentStatus(data).subscribe(result => {
+      console.log(result);
+    });
+  }
+
+  // refreshes the data on the client
+  updateView(): void {
+    this.climateService.getCurrentStatus().subscribe(result => {
+      console.log(result);
+      this.curTemp = result.temperature;
+      this.curHumidity = result.humidity;
+    });
+  }
 }
