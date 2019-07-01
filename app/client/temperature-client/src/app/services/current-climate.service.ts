@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class CurrentClimateService {
   port = '5000';
-  base = 'http://10.90.232.1';
+  base = 'http://10.90.233.6';
   url = this.base + ':' + this.port ;
 
   constructor(private http: HttpClient) { }

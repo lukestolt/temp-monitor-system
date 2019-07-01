@@ -1,6 +1,6 @@
 .dashboard-wrapper
 {
-    margin: 10 px;   
+    margin: 20px;   
     text-align: center; 
 }
 
@@ -9,4 +9,11 @@
     /* text-align: center;
     margin: 10 px; */
 
+}
+.data-container
+{   
+    display: inline-block;
+    padding: 8px;
+    border: 1px solid black;
+    margin: 20px;
 }

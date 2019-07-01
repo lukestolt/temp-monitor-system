@@ -25,7 +25,7 @@ namespace Controllers
         [HttpPost]
         public ActionResult UpdateCurrentStatus([FromBody] DashboardModel dashModel) 
         {
-            Console.WriteLine("UpdateCurretnStatus");
+            Console.WriteLine(dashModel);
             if(dashModel != null)
             {
                 TemperatureData.UpdateDashboardModel(dashModel);
@@ -34,5 +34,12 @@ namespace Controllers
             }
             return Json(new ResponseModel(ResponseModel.Responses.Error));
         }
+
+        [HttpPost]
+        public void UpdateTest([FromBody] string num) 
+        {
+            Console.WriteLine("num = " + num);
+        }
+
     }
 }

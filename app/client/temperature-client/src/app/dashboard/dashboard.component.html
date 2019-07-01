@@ -3,10 +3,11 @@
   <div class="date-container">
     <iframe src="http://free.timeanddate.com/clock/i6tvtfqb/n158/fn8/fs30/bas0/tt0/tw1/tm2" frameborder="0" width="543" height="36"></iframe>
   </div>
-  
-  <h3>{{curTemp}} &#176;</h3>
-  <br>
-  <h3>{{curHumidity}} g/m<sup>3</sup></h3>
+  <div class="data-container">
+    <h3>{{curTemp}}&#176;F</h3>
+    <br>
+    <h3>Humidity: {{curHumidity}}%</h3>
+  </div>
 
   <br>
   <button (click)='updateData()'>Update Data</button>

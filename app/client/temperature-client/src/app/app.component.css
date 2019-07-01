@@ -4,5 +4,7 @@
     text-align: center;
 }
 .navBarLinks{
-    margin-right: 8px;
+    margin-right: 30px;
+    color: white;
+    /* border-bottom: 1px solid white; */
 }
