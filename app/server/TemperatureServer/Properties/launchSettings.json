@@ -18,7 +18,7 @@
     "TemperatureServer": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://10.90.233.6:5000",
+      "applicationUrl": "http://10.88.143.227:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

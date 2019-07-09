@@ -1,1 +1,30 @@
 <h1>Historical View</h1>
+<br>
+
+<table>
+   <tr>
+     <th>Start Time</th>
+     <th>Finish Time</th> 
+   </tr>
+   <tr>
+     <td><input id="startDate" type="datetime-local" (change)="startDateChange($event)"></td>
+     <td><input id="endDate" type="datetime-local" (change)="finishDateChange($event)"></td> 
+   </tr>
+ </table>
+
+
+<!-- <input id="startDate" type="datetime-local">
+<input id="endDate" type="datetime-local"> -->
+<br>
+<google-chart #chart
+   [title]="title"
+   [type]="type"
+   [data]="data"
+   [columnNames]="columnNames"
+   [options]="options"
+   [width]="width"
+   [height]="height">
+</google-chart>
+
+<br>
+<button (click)="exportClick()">Export Data</button>

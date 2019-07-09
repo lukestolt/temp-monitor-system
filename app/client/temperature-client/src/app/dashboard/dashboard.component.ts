@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
     // starts the clock and gets current date
     this.curTime = '';
-    this.startTime();
+    // this.startTime();
   }
 
   /**
@@ -54,13 +54,13 @@ export class DashboardComponent implements OnInit {
   }
 
   // FIXME: for testing purpose only
-  updateData(): void {
-    console.log('updating the data');
-    const data: Dashboard = {temperature: 73, humidity: 89, time: '9:37', date: '7/1/2019'};
-    this.climateService.updateCurrentStatus(data).subscribe(result => {
-      console.log(result);
-    });
-  }
+  // updateData(): void {
+  //   console.log('updating the data');
+  //   const data: Dashboard = {temperature: 73, humidity: 89, time: '9:37', date: '7/1/2019'};
+  //   this.climateService.updateCurrentStatus(data).subscribe(result => {
+  //     console.log(result);
+  //   });
+  // }
 
   // refreshes the data on the client
   updateView(): void {

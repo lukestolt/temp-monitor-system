@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Dashboard } from '../dashboard/dashboard.component';
 import { Observable } from 'rxjs';
+import { Response } from 'selenium-webdriver/http';
 
+export interface Response {
+  response: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -22,4 +26,15 @@ export class CurrentClimateService {
     return this.http.post<Dashboard>(this.url + '/dashboard/updatecurrentstatus', dm);
   }
 
+  // getHistoricalData(): Observable<Dashboard[]> {
+  //   return this.http.get<Dashboard[]>(this.url + '/historical/gethistoricaldata');
+  // }
+
+  getHistoricalData(startKey: number, finishKey: number): Observable<Dashboard[]> {
+    const paramters =  new HttpParams()
+    .set('startKey', startKey + '')
+    .set('finishTimeKey', finishKey + '');
+    return this.http.get<Dashboard[]>(this.url + '/historical/gethistoricaldata',
+                                      {params: paramters});
+  }
 }

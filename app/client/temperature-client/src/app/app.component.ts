@@ -1,27 +1,45 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { SignalRService } from './services/signal-r.service';
+import { HttpClient } from '@angular/common/http';
 
+
+export interface Message {
+  severity: string;
+  summary: string;
+}
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'temperature-client';
+export class AppComponent implements OnInit {
 
-  constructor(private router: Router) {
+  constructor(public signalRService: SignalRService, private http: HttpClient) {
     //
   }
 
-  histNavigate(): void {
-      console.log('navigating to the hist view');
-      this.router.navigateByUrl('/historical');
+  ngOnInit(): void {
+    // this.signalRService.startConnection();
+    // this.signalRService.addTemperatureDataListener();
+    // this.startHttpRequest();
   }
 
-  dashNavigate(): void {
-    console.log('navigating to the dash view');
-    this.router.navigateByUrl('/dashboard');
+  private startHttpRequest = () => {
+    this.http.get('http://10.90.233.6:5000/climate')
+      .subscribe(res => {
+        console.log(res);
+      });
   }
+
+  // histNavigate(): void {
+  //     console.log('navigating to the hist view');
+  //     this.router.navigateByUrl('/historical');
+  // }
+
+  // dashNavigate(): void {
+  //   console.log('navigating to the dash view');
+  //   this.router.navigateByUrl('/dashboard');
+  // }
 
 }
 
